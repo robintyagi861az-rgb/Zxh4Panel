@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --obsidian: #0b0813;
+}
+
+body {
+  background: radial-gradient(ellipse at top, #150f24 0%, #080510 55%, #050308 100%);
+  color: #f4f2fb;
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-panel/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-glow;
+  }
+
+  .glow-btn {
+    @apply bg-amethyst-gradient text-white font-semibold rounded-xl px-5 py-2.5
+      shadow-glow transition-all duration-200
+      hover:shadow-glowLg hover:brightness-110 active:scale-[0.98]
+      disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .ghost-btn {
+    @apply border border-amethyst-500/40 text-amethyst-400 rounded-xl px-5 py-2.5
+      hover:bg-amethyst-500/10 transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-obsidian2/80 border border-white/10 rounded-xl px-4 py-2.5
+      text-sm text-white placeholder:text-white/30
+      focus:outline-none focus:ring-2 focus:ring-amethyst-500/60 focus:border-amethyst-500/60
+      transition-all;
+  }
+
+  .neon-text {
+    @apply text-white;
+    text-shadow: 0 0 12px rgba(167, 139, 250, 0.55);
+  }
+
+  .badge {
+    @apply text-xs font-medium px-2.5 py-1 rounded-full border;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.35);
+  border-radius: 8px;
+}
